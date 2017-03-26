@@ -1,6 +1,7 @@
 package com.udacity.stockhawk.sync;
 
 import android.app.IntentService;
+import android.content.Context;
 import android.content.Intent;
 
 import timber.log.Timber;
