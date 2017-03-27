@@ -68,6 +68,7 @@ public final class QuoteSyncJob {
             Map<String, Stock> quotes = YahooFinance.get(stockArray);
             Iterator<String> iterator = stockCopy.iterator();
 
+            Timber.d("*************");
             Timber.d(quotes.toString());
 
             ArrayList<ContentValues> quoteCVs = new ArrayList<>();
@@ -76,6 +77,7 @@ public final class QuoteSyncJob {
                 String symbol = iterator.next();
                 Stock stock = quotes.get(symbol);
                 StockQuote quote = stock.getQuote();
+                String name = stock.getName();
 
                 if (quote.getPrice() != null) {
                     float price = quote.getPrice().floatValue();
@@ -100,6 +102,7 @@ public final class QuoteSyncJob {
                     quoteCV.put(Contract.Quote.COLUMN_PRICE, price);
                     quoteCV.put(Contract.Quote.COLUMN_PERCENTAGE_CHANGE, percentChange);
                     quoteCV.put(Contract.Quote.COLUMN_ABSOLUTE_CHANGE, change);
+                    quoteCV.put(Contract.Quote.COLUMN_NAME,name);
 
 
                     quoteCV.put(Contract.Quote.COLUMN_HISTORY, historyBuilder.toString());
