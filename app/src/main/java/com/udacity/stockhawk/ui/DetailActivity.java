@@ -2,6 +2,7 @@ package com.udacity.stockhawk.ui;
 
 import android.database.Cursor;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
@@ -12,7 +13,7 @@ import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.DefaultAxisValueFormatter;
+import com.udacity.stockhawk.DateAxisValueFormatter;
 import com.udacity.stockhawk.R;
 import com.udacity.stockhawk.data.Contract;
 
@@ -91,25 +92,28 @@ public class DetailActivity extends AppCompatActivity {
         priceTextView.setText(price);
         if (Float.parseFloat(absChange) > 0) {
             changeTextView.setText("+" + absChange + "(+" + percentChange + "%)");
+            changeTextView.setTextColor(ContextCompat.getColor(this,R.color.material_green_700));
         } else {
             changeTextView.setText(absChange + "(" + percentChange + "%)");
+            changeTextView.setTextColor(ContextCompat.getColor(this,R.color.material_red_700));
         }
 
         List<Entry> entries = new ArrayList<>();
+        List<Date> dateList = new ArrayList<>();
         StringTokenizer tokens = new StringTokenizer(stockHistory, ",\n");
-        float dateInterval = 10f;
+        float dateInterval = 7f;
         while (tokens.hasMoreTokens() && dateInterval >= 1) {
 
             Long dateInMillis = Long.parseLong(tokens.nextToken());
             Date date = new Date(dateInMillis);
             float value = Float.parseFloat(tokens.nextToken());
-
+            dateList.add(date);
             Entry entry = new Entry(dateInterval, value);
             entries.add(entry);
             dateInterval--;
         }
         List<Entry> entryList = new ArrayList<>();
-        for (int i = 9; i >= 0; i--) {
+        for (int i = 6; i >= 0; i--) {
             entryList.add(entries.get(i));
         }
 
@@ -118,10 +122,10 @@ public class DetailActivity extends AppCompatActivity {
         chart.setData(data);
         XAxis xAxis = chart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
-       // xAxis.setValueFormatter(new DefaultAxisValueFormatter());
+        xAxis.setValueFormatter(new DateAxisValueFormatter(dateList));
         chart.animateX(1000, Easing.EasingOption.EaseInBack);
         chart.invalidate();
-        //TODO: Add labels for dates and style the chart
+        xAxis.setLabelRotationAngle(315);
     }
 }
 
