@@ -21,5 +21,8 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <style name="AppTheme.Detail" parent = "Theme.AppCompat.NoActionBar"/>
+    <style name="AppTheme.Detail" parent = "Theme.AppCompat.NoActionBar">
+
+        <item name ="android:statusBarColor">@color/colorPrimaryDark</item>
+    </style>
 </resources>
