@@ -1,10 +1,17 @@
 # Stock Hawk
 
-This is the starter code for project 3 in Udacity's [Android Developer Nanodegree](https://www.udacity.com/course/android-developer-nanodegree-by-google--nd801). 
+Stock Hawk is an android app that fetches the data from the Yahoo Finance API. 
 
-Check out Udacity's [Advanced Android App Development](https://www.udacity.com/course/advanced-android-app-development--ud855) course to get the skills you'll need to complete this project!
+User has the option to add new Stock symbols. The detail screen shows the graph of stock prices over time.
 
-If you're a Nanodegree student check your work againt the project [rubric](https://review.udacity.com/#!/rubrics/140/view), then click [here](https://classroom.udacity.com/nanodegrees/nd801/parts/8011345406/project) to submit your project.
+# Screens
+
+![home screen](https://github.com/sjsingh200893/StockHawk/blob/master/app/Screens/MainScreen.png)
+![Detail screen](https://github.com/sjsingh200893/StockHawk/blob/master/app/Screens/DetailScreen.png)
+
+# Using the code
+
+The code doesn't require any special actions. Just clone the repository and you are ready to go.
 
 # Contrubuting
 
