@@ -59,7 +59,7 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
-        String symbol = getIntent().getStringExtra("Symbol");
+        String symbol = getIntent().getStringExtra(getString(R.string.intent_extra_symbol));
 
         if (null != toolbar) {
             this.setSupportActionBar(toolbar);
@@ -87,17 +87,23 @@ public class DetailActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        String symbolType = "NASDAQ: " + symbol;
+
         nameTextView.setText(name);
-        symbolTextView.setText("NASDAQ: " + symbol);
+        nameTextView.setContentDescription(name);
+        symbolTextView.setText(symbolType);
+        symbolTextView.setContentDescription(symbol);
         priceTextView.setText(price);
+        priceTextView.setContentDescription(price);
         if (Float.parseFloat(absChange) > 0) {
             changeTextView.setText("+" + absChange + "(+" + percentChange + "%)");
-            changeTextView.setTextColor(ContextCompat.getColor(this,R.color.material_green_700));
+            changeTextView.setTextColor(ContextCompat.getColor(this, R.color.material_green_700));
         } else {
             changeTextView.setText(absChange + "(" + percentChange + "%)");
-            changeTextView.setTextColor(ContextCompat.getColor(this,R.color.material_red_700));
+            changeTextView.setTextColor(ContextCompat.getColor(this, R.color.material_red_700));
         }
 
+        changeTextView.setContentDescription(getString(R.string.price_change_content_desc));
         List<Entry> entries = new ArrayList<>();
         List<Date> dateList = new ArrayList<>();
         StringTokenizer tokens = new StringTokenizer(stockHistory, ",\n");
