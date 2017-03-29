@@ -8,6 +8,7 @@ User has the option to add new Stock symbols. The detail screen shows the graph 
 
 ![home screen](https://github.com/sjsingh200893/StockHawk/blob/master/app/Screens/MainScreen.png)
 ![Detail screen](https://github.com/sjsingh200893/StockHawk/blob/master/app/Screens/DetailScreen.png)
+![Detail landscape screen](https://github.com/sjsingh200893/StockHawk/blob/master/app/Screens/Detail_land.png)
 
 # Using the code
 
