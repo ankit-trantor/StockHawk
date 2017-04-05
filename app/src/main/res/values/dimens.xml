@@ -5,4 +5,11 @@
     <dimen name="widget_default_height">180dp</dimen>
     <dimen name="list_item_stock_price_horizontal_padding">8dp</dimen>
     <dimen name="list_item_stock_change_horizontal_padding">4dp</dimen>
+
+    <dimen name="detail_stock_name_text_size">20sp</dimen>
+    <dimen name="detail_stock_symbol_text_size">16sp</dimen>
+    <dimen name="detail_price_size">34sp</dimen>
+    <dimen name="detail_change_size">12sp</dimen>
+
+    <dimen name="stock_dialog_margin">4dp</dimen>
 </resources>

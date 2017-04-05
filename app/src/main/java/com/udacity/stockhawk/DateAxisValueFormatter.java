@@ -14,12 +14,14 @@ import java.util.List;
 public class DateAxisValueFormatter implements IAxisValueFormatter {
 
     List<Date> dateList;
-    public DateAxisValueFormatter(List<Date> dateList){
-    this.dateList = dateList;
+
+    public DateAxisValueFormatter(List<Date> dateList) {
+        this.dateList = dateList;
     }
+
     @Override
     public String getFormattedValue(float value, AxisBase axis) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        return sdf.format(dateList.get(7-(int)value));
+        return sdf.format(dateList.get(7 - (int) value));
     }
 }

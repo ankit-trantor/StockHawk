@@ -1,6 +1,5 @@
 package com.udacity.stockhawk.widget;
 
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
@@ -8,9 +7,6 @@ import android.content.Intent;
 import android.widget.RemoteViews;
 
 import com.udacity.stockhawk.R;
-import com.udacity.stockhawk.ui.MainActivity;
-
-import timber.log.Timber;
 
 /**
  * Created by sarabjeet on 30/3/17.
@@ -19,21 +15,21 @@ import timber.log.Timber;
 public class WidgetProvider extends AppWidgetProvider {
 
     @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds){
+    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
-        super.onUpdate(context,appWidgetManager,appWidgetIds);
-        for(int appWidgetId : appWidgetIds){
-            updateWidget(context,appWidgetManager,appWidgetId);
+        super.onUpdate(context, appWidgetManager, appWidgetIds);
+        for (int appWidgetId : appWidgetIds) {
+            updateWidget(context, appWidgetManager, appWidgetId);
 
         }
     }
 
-    public void updateWidget(Context context,AppWidgetManager appWidgetManager, int appWidgetId){
+    public void updateWidget(Context context, AppWidgetManager appWidgetManager, int appWidgetId) {
 
-        RemoteViews views = new RemoteViews(context.getPackageName(),R.layout.widget_layout);
-        setList(views,context,appWidgetId);
-        appWidgetManager.updateAppWidget(appWidgetId,views);
-        appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId,R.id.stock_list_view);
+        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_layout);
+        setList(views, context, appWidgetId);
+        appWidgetManager.updateAppWidget(appWidgetId, views);
+        appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.stock_list_view);
     }
 
     void setList(RemoteViews rv, Context context, int appWidgetId) {

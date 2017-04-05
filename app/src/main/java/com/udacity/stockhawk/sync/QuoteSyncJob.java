@@ -12,6 +12,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
 
+import com.udacity.stockhawk.R;
 import com.udacity.stockhawk.data.Contract;
 import com.udacity.stockhawk.data.PrefUtils;
 
@@ -99,7 +100,7 @@ public final class QuoteSyncJob {
                     quoteCV.put(Contract.Quote.COLUMN_PRICE, price);
                     quoteCV.put(Contract.Quote.COLUMN_PERCENTAGE_CHANGE, percentChange);
                     quoteCV.put(Contract.Quote.COLUMN_ABSOLUTE_CHANGE, change);
-                    quoteCV.put(Contract.Quote.COLUMN_NAME,name);
+                    quoteCV.put(Contract.Quote.COLUMN_NAME, name);
 
 
                     quoteCV.put(Contract.Quote.COLUMN_HISTORY, historyBuilder.toString());
@@ -128,7 +129,7 @@ public final class QuoteSyncJob {
         new Handler(Looper.getMainLooper()).post(new Runnable() {
             @Override
             public void run() {
-                Toast.makeText(mainContext, "Symbol Entered is Invalid", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mainContext, R.string.no_symbol_error, Toast.LENGTH_SHORT).show();
             }
         });
     }

@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_horizontal_margin"
-                android:textSize="20sp" />
+                android:textSize="@dimen/detail_stock_name_text_size" />
 
             <TextView
                 android:id="@+id/symbol_textView"
@@ -38,7 +38,7 @@
                 android:layout_marginStart="@dimen/activity_horizontal_margin"
                 android:layout_marginTop="@dimen/activity_horizontal_margin"
                 android:fontFamily="sans-serif-light"
-                android:textSize="16sp" />
+                android:textSize="@dimen/detail_stock_symbol_text_size" />
 
             <GridLayout
                 android:layout_width="match_parent"
@@ -53,8 +53,8 @@
                     android:layout_marginBottom="@dimen/activity_horizontal_margin"
                     android:layout_marginStart="@dimen/activity_horizontal_margin"
                     android:layout_marginTop="20dp"
-                    android:gravity="left"
-                    android:textSize="34sp" />
+                    android:gravity="start"
+                    android:textSize="@dimen/detail_price_size" />
 
                 <TextView
                     android:id="@+id/change_textView"
@@ -63,7 +63,7 @@
                     android:layout_columnWeight="1"
                     android:layout_margin="@dimen/activity_horizontal_margin"
                     android:gravity="end"
-                    android:textSize="12sp" />
+                    android:textSize="@dimen/detail_change_size" />
             </GridLayout>
 
         </LinearLayout>
