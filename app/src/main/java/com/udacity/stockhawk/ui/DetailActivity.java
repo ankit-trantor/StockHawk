@@ -24,7 +24,6 @@ import java.util.StringTokenizer;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import timber.log.Timber;
 
 /**
  * Created by Sarabjeet Singh on 09-03-2017.
@@ -80,7 +79,6 @@ public class DetailActivity extends AppCompatActivity {
                 absChange = cursor.getString(cursor.getColumnIndex(Contract.Quote.COLUMN_ABSOLUTE_CHANGE));
                 percentChange = cursor.getString(cursor.getColumnIndex(Contract.Quote.COLUMN_PERCENTAGE_CHANGE));
                 stockHistory = cursor.getString(cursor.getColumnIndex(Contract.Quote.COLUMN_HISTORY));
-                Timber.d(stockHistory);
             }
             cursor.close();
         } catch (NullPointerException e) {

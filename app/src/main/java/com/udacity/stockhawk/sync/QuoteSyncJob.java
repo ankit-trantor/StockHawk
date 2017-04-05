@@ -68,9 +68,6 @@ public final class QuoteSyncJob {
             Map<String, Stock> quotes = YahooFinance.get(stockArray);
             Iterator<String> iterator = stockCopy.iterator();
 
-            Timber.d("*************");
-            Timber.d(quotes.toString());
-
             ArrayList<ContentValues> quoteCVs = new ArrayList<>();
 
             while (iterator.hasNext()) {
@@ -110,10 +107,7 @@ public final class QuoteSyncJob {
                     quoteCVs.add(quoteCV);
 
                 } else {
-                    Timber.d("********************************************************8");
-                    Timber.d(PrefUtils.getStocks(context).toString());
                     PrefUtils.removeStock(context, symbol);
-                    Timber.d(PrefUtils.getStocks(context).toString());
                     showToast();
                 }
             }
