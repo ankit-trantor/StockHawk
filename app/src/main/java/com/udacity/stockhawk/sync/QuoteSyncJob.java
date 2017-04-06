@@ -66,6 +66,14 @@ public final class QuoteSyncJob {
                 return;
             }
 
+            for(String stockSymbol:stockArray){
+                if(!stockSymbol.matches("[A-Z]+")){
+                    PrefUtils.removeStock(context,stockSymbol);
+                    showToast();
+                    return;
+                }
+            }
+
             Map<String, Stock> quotes = YahooFinance.get(stockArray);
             Iterator<String> iterator = stockCopy.iterator();
 
@@ -73,10 +81,10 @@ public final class QuoteSyncJob {
 
             while (iterator.hasNext()) {
                 String symbol = iterator.next();
-                Stock stock = quotes.get(symbol);
-                StockQuote quote = stock.getQuote();
-                String name = stock.getName();
 
+                    Stock stock = quotes.get(symbol);
+                    StockQuote quote = stock.getQuote();
+                    String name = stock.getName();
                 if (quote.getPrice() != null) {
                     float price = quote.getPrice().floatValue();
                     float change = quote.getChange().floatValue();

@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/stock_dialog_margin"
-        android:layout_marginLeft="@dimen/stock_dialog_margin"
-        android:layout_marginRight="@dimen/stock_dialog_margin"
+        android:layout_marginStart="@dimen/stock_dialog_margin"
+        android:layout_marginEnd="@dimen/stock_dialog_margin"
         android:layout_marginTop="@dimen/activity_horizontal_margin"
         android:hint="@string/dialog_hint"
         android:inputType="textCapCharacters" />
