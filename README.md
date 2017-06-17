@@ -13,6 +13,7 @@ User has the option to add new Stock symbols. The detail screen shows the graph 
 # Using the code
 
 The code doesn't require any special actions. Just clone the repository and you are ready to go.
+Note: The historical data URI has changed so please refer to the documentation for historical data. I'll update it as soon as I get some time.
 
 # Contrubuting
 
